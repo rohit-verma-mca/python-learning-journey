@@ -9,12 +9,7 @@ the function should return:
     'apples, bananas, tofu, and cats'
 The function should work with any list passed to it, including an
 empty list.
-
-Topic     : Lists, Strings
-Source    : Automate the Boring Stuff with Python (3rd Ed.) - Ch.6 Practice Project ("Comma Code")
-Difficulty: Easy
 """
-
 
 def solve(items):
     if len(items) == 0:
