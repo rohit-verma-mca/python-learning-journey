@@ -4,9 +4,6 @@ Simulate flipping a coin 100 times per trial, across 10,000 trials, and
 count how many trials contain a streak of at least 6 heads or 6 tails in
 a row. Print what percentage of trials had such a streak.
 
-Topic     : Lists, Loops
-Source    : Automate the Boring Stuff with Python (3rd Ed.) - Ch.6 Practice Project ("Coin Flip Streaks")
-Difficulty: Medium
 """
 
 import random
