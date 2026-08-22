@@ -14,3 +14,5 @@ env/
 scratch/
 secrets/
 *.db
+resized_images/
+coin_flip_streaks_chart.png
