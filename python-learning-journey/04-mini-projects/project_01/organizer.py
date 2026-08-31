@@ -61,6 +61,13 @@ def organize_folder(source_folder):
 
 
 if __name__ == "__main__":
-    summary = organize_folder("test_source_folder")
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Organize files in a folder by type and generate an Excel report.")
+    parser.add_argument("source", nargs="?", default="test_source_folder", help="Folder to organize (default: test_source_folder)")
+
+    args = parser.parse_args()
+
+    summary = organize_folder(args.source)
     if summary:
-        generate_report(summary, output_folder="test_source_folder")
+        generate_report(summary, output_folder=args.source)
