@@ -5,10 +5,18 @@ Day 1 — Core Logic
 Scans a source folder and sorts files into subfolders by file type
 (Documents, Images, Spreadsheets, Others), based on file extension.
 """
+import logging
 from report_generator import generate_report
 import os
 import shutil
-
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.FileHandler("organizer.log"),
+        logging.StreamHandler()
+    ]
+)
 FILE_CATEGORIES = {
     "Documents": [".pdf", ".docx", ".txt"],
     "Images": [".jpg", ".jpeg", ".png", ".gif"],
@@ -26,7 +34,7 @@ def get_category(filename):
 
 def organize_folder(source_folder):
     if not os.path.exists(source_folder):
-        print(f"Source folder '{source_folder}' does not exist.")
+        logging.error(f"Source folder '{source_folder}' does not exist.")
         return {}
 
     moved_summary = {}
@@ -43,9 +51,9 @@ def organize_folder(source_folder):
             shutil.move(source_path, dest_path)
 
             moved_summary[category] = moved_summary.get(category, 0) + 1
-            print(f"Moved '{filename}' -> {category}/")
+            logging.info(f"Moved '{filename}' -> {category}/")
 
-    print("\nSummary:")
+    logging.info("\nSummary:")
     for category, count in moved_summary.items():
         print(f"  {category}: {count} file(s)")
 
