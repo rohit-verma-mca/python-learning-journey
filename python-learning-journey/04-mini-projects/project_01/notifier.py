@@ -13,6 +13,11 @@ from email.message import EmailMessage
 EMAIL_ADDRESS = os.environ.get("EMAIL_ADDRESS")
 EMAIL_APP_PASSWORD = os.environ.get("EMAIL_APP_PASSWORD")
 
+if not EMAIL_ADDRESS or not EMAIL_APP_PASSWORD:
+    raise EnvironmentError(
+        "EMAIL_ADDRESS and EMAIL_APP_PASSWORD must be set as environment variables before running this script."
+    )
+
 
 def send_summary_email(summary, recipient=None):
     if recipient is None:
