@@ -5,6 +5,7 @@ Day 1 — Core Logic
 Scans a source folder and sorts files into subfolders by file type
 (Documents, Images, Spreadsheets, Others), based on file extension.
 """
+from notifier import send_summary_email
 import logging
 from report_generator import generate_report
 import os
@@ -71,3 +72,4 @@ if __name__ == "__main__":
     summary = organize_folder(args.source)
     if summary:
         generate_report(summary, output_folder=args.source)
+        send_summary_email(summary)
