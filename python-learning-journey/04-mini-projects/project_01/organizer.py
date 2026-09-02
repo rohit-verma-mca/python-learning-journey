@@ -72,4 +72,7 @@ if __name__ == "__main__":
     summary = organize_folder(args.source)
     if summary:
         generate_report(summary, output_folder=args.source)
-        send_summary_email(summary)
+                try:
+            send_summary_email(summary)
+        except Exception as e:
+            logging.error(f"Failed to send summary email: {e}")
