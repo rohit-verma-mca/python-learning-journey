@@ -89,9 +89,11 @@ tracker) and an `exercises/` folder with the solved code.
 ## Featured Projects
 *(Fill this in as you complete real projects — this section is what visitors see first.)*
 
+## Featured Projects
+
 | Project | What it does | Folder |
 |---|---|---|
-| _Coming soon_ | | |
+| Automated File Organizer & Report Generator | Sorts files by type, generates an Excel report, and emails a summary — with logging and error handling | [`04-mini-projects/project_01`](04-mini-projects/project_01) |
 
 ## How to Run
 
